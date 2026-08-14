@@ -1,17 +1,18 @@
 # Static narrative-mystery reel
 
-This is a drop-in addition for the existing max-mccormick.com GitHub Pages repository. It uses plain HTML and CSS: no TypeScript, React, packages, compilation, or build action.
+This is a complete static version of max-mccormick.com plus the narrative-mystery reel. It uses plain HTML and one shared CSS file: no TypeScript, React, packages, compilation, or build action.
 
 ## Files
 
+    index.html
     assets/
       css/
-        reel.css
+        site.css
     reels/
       narrative-mystery/
         index.html
 
-Merge the two top-level folders into the existing repository. The page will then be available at:
+Copy the contents into the existing repository. The included root index.html reproduces the current home page using the same shared stylesheet as the reel. The reel will then be available at:
 
     https://max-mccormick.com/reels/narrative-mystery/
 
@@ -39,7 +40,7 @@ Copy the reel directory and rename it:
       narrative-mystery-cobalt-lane/
       narrative-mystery-lost-lantern/
 
-Each directory becomes a separately measurable URL. Change only the introduction or media selection when useful; the shared stylesheet stays unchanged.
+Each directory becomes a separately measurable URL. Change only the introduction or media selection when useful; assets/css/site.css stays unchanged.
 
 ## Analytics
 
