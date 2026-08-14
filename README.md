@@ -16,6 +16,10 @@ Copy the contents into the existing repository. The included root index.html rep
 
     https://max-mccormick.com/reels/narrative-mystery/
 
+## Update the Recent section
+
+The home page contains a short Recent section rather than a permanent portfolio. Add the newest item above the existing entries using the commented example in index.html, and remove older entries when they no longer feel current.
+
 The page contains noindex and nofollow metadata, so cooperative search engines should not list it. The URL remains unlisted rather than access-controlled: anyone who receives the link can open it.
 
 ## Replace the media
