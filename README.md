@@ -29,11 +29,10 @@ In reels/narrative-mystery/index.html, replace:
 - VIDEO_ID_MAIN
 - VIDEO_ID_SECONDARY_1
 - VIDEO_ID_SECONDARY_2
-- SOUNDCLOUD_PLAYLIST_ID
 
 For YouTube, the video ID is the part after youtu.be/ or after watch?v=.
 
-For SoundCloud, the most reliable approach is to open the playlist, choose Share → Embed, and replace the complete src value of the SoundCloud iframe with the URL from SoundCloud's generated embed.
+The SoundCloud player is already connected to the private YB Interludes playlist. Its secret token is necessarily present in the page source: anyone who receives the reel URL can listen, but the playlist is not publicly discoverable through SoundCloud.
 
 ## Company-specific variants
 
