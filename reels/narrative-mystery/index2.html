@@ -55,7 +55,7 @@
 		</iframe>
             </div>
             <div class="caption">
-              <div><p>discovery · adaptive music · restrained unease</p></div>
+              <div><p>exploration · adaptive music · restrained unease</p></div>
               <p class="duration">0:34</p>
             </div>
           </article>
@@ -121,28 +121,26 @@
   </main>
 
 <script>
-const audio = document.getElementById('reel-audio');
-const tracks = document.querySelectorAll('.audio-tracklist button');
+	const audio = document.getElementById('reel-audio');
+	const tracks = document.querySelectorAll('.audio-tracklist button');
 
-tracks.forEach((track) => {
-  track.addEventListener('click', () => {
-    audio.src = track.dataset.src;
-    audio.play();
+	tracks.forEach((track) => {
+  		track.addEventListener('click', () => {
+    		audio.src = track.dataset.src;
+    		audio.play();
+    		tracks.forEach(t => t.classList.remove('active'));
+    		track.classList.add('active');
+  		});
+	});
 
-    tracks.forEach(t => t.classList.remove('active'));
-    track.classList.add('active');
-  });
-});
-
-audio.addEventListener('ended', () => {
-  const current = [...tracks].findIndex(
-    track => track.classList.contains('active')
-  );
-
-  if (current >= 0 && current + 1 < tracks.length) {
-    tracks[current + 1].click();
-  }
-});
+	audio.addEventListener('ended', () => {
+  		const current = [...tracks].findIndex(
+    		track => track.classList.contains('active')
+  		);
+  		if (current >= 0 && current + 1 < tracks.length) {
+    		tracks[current + 1].click();
+  		}
+	});
 </script>
 
   <!-- Paste the Cloudflare Web Analytics snippet here, immediately before the closing body tag. -->
