@@ -4,8 +4,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="noindex, nofollow">
-  <meta name="description" content="Selected narrative-mystery work by composer Max McCormick.">
-  <title>Narrative Mystery Reel — Max McCormick</title>
+  <meta name="description" content="Selected work by composer Max McCormick.">
+  <title>Reel — Max McCormick</title>
   <link rel="stylesheet" href="../../assets/css/site.css">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 </head>
@@ -13,7 +13,7 @@
   <main>
     <div class="container">
       <section class="introduction" aria-labelledby="page-title">
-        <p class="eyebrow">Selected work · Narrative mystery</p>
+        <p class="eyebrow">Selected work</p>
         <h1 id="page-title">Music for stories that reveal themselves slowly.</h1>
         <p class="lede">A short selection of atmospheric, character-led work—music shaped around ambiguity, place, and the quiet machinery of a narrative.</p>
       </section>
@@ -149,7 +149,17 @@
   		}
 	  });
   </script>
+  <script>
+    const reelCode = new URLSearchParams(location.search).get("r");
 
-  <!-- Paste the Cloudflare Web Analytics snippet here, immediately before the closing body tag. -->
+    if (reelCode) {
+      fetch("https://real-tracking.max-a4e.workers.dev//?r=" + encodeURIComponent(reelCode))
+        .catch(() => {});
+    }
+  </script>
+
+  <!-- Cloudflare Web Analytics -->
+  <script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "3364747d47e742a5ab5c680f2540b19e"}'></script>
+  <!-- End Cloudflare Web Analytics -->
 </body>
 </html>
