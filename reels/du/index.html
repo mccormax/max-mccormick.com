@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="description" content="Selected work by composer Max McCormick.">
+  <title>Reel — Max McCormick</title>
+  <link rel="stylesheet" href="../../assets/css/site.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+</head>
+<body class="reel-page">
+  <main>
+    <div class="container">
+      <section class="introduction" aria-labelledby="page-title">
+        <p class="eyebrow">Selected work</p>
+        <h1 id="page-title">Music for stories that reveal themselves slowly.</h1>
+        <p class="lede">A short selection of atmospheric, character-led work—music shaped around ambiguity, place, and the quiet machinery of a narrative.</p>
+      </section>
+
+      <section class="feature" aria-labelledby="hitchhiker-title">
+      
+        <div class="video-frame">
+          <iframe
+  		      src="https://player.mediadelivery.net/embed/758774/03ffc5ff-daa0-4aa1-bc43-7f200938e535"
+  		      loading="lazy"
+  		      allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;"
+  		      allowfullscreen>
+		      </iframe>
+        </div>
+        <div class="caption">
+          <div>
+            <h2 id="yerba-buena-title">Yerba Buena</h2>
+            <p>restrained unease · chase · adaptive</p>
+          </div>
+        </div>
+        <p class="context">A surreal version of 1970s San Francisco where familiar places behave strangely, impossible puzzles reshape the world, and a mysterious glitch threatens to unravel it all.</p>
+      </section>
+      
+      <section class="listen" aria-labelledby="listen-title">
+        <div class="section-heading">
+          <p class="eyebrow">Listen separately</p>
+          <h2 id="listen-title">Selected cues</h2>
+        </div>
+
+        <div class="audio-reel">
+          <audio id="reel-audio" controls preload="none"></audio>
+
+          <ol class="audio-tracklist">
+          <li>
+            <button type="button" data-src="https://max-music.b-cdn.net/Climb%20Barb%20Climb.mp3">
+              <span>Climb Barb Climb - Yerba Buena</span>
+              <span>mild tension · driving</span>
+            </button>
+          <li>
+            <button type="button" data-src="https://max-music.b-cdn.net/Dark%20Revelation.mp3">
+              <span>Dark Revelation - Yerba Buena</span>
+              <span>mild tension · exploration · adaptive</span>
+            </button>
+          </li>
+          <li>
+            <button type="button" data-src="https://max-music.b-cdn.net/Robot%20Rooms.mp3">
+              <span>Robot Rooms - Yerba Buena</span>
+              <span>revelation · exploration · adaptive</span>
+            </button>
+          </li>
+          <li>
+            <button type="button" data-src="https://max-music.b-cdn.net/The%20Gloom.mp3">
+              <span>The Gloom - Yerba Buena</span>
+              <span>hopelessness · monolog</span>
+            </button>
+          </li>
+          <li>
+            <button type="button" data-src="https://max-music.b-cdn.net/Digital%20World.mp3">
+              <span>Digital World - Yerba Buena</span>
+              <span>regret · narrative</span>
+            </button>
+          </li>
+        </ol>
+      </div>
+
+      <p class="small-note">Selected cues presented without dialogue or game audio.</p>
+      </section>
+
+      <footer>
+        <div class="links">
+          <a href="mailto:max@max-mccormick.com">→ Email</a>
+          <a href="../../">→ Main site</a>
+        </div>
+      </footer>
+    </div>
+  </main>
+
+  <script>
+	  const audio = document.getElementById('reel-audio');
+	  const tracks = document.querySelectorAll('.audio-tracklist button');
+
+	  tracks.forEach((track) => {
+  		track.addEventListener('click', () => {
+    		audio.src = track.dataset.src;
+    		audio.play();
+    		tracks.forEach(t => t.classList.remove('active'));
+    		track.classList.add('active');
+  		});
+	  });
+
+	  audio.addEventListener('ended', () => {
+  		const current = [...tracks].findIndex(
+    		track => track.classList.contains('active')
+  		);
+  		if (current >= 0 && current + 1 < tracks.length) {
+    		tracks[current + 1].click();
+  		}
+	  });
+  </script>
+  <script>
+    const reelCode = new URLSearchParams(location.search).get("r");
+
+    if (reelCode) {
+      fetch("https://real-tracking.max-a4e.workers.dev//?r=" + encodeURIComponent(reelCode))
+        .catch(() => {});
+    }
+  </script>
+
+  <!-- Cloudflare Web Analytics -->
+  <script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "3364747d47e742a5ab5c680f2540b19e"}'></script>
+  <!-- End Cloudflare Web Analytics -->
+</body>
+</html>
